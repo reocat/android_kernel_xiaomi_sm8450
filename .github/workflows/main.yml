@@ -38,6 +38,8 @@ jobs:
           sudo apt install gcc-arm-linux-gnueabi -y
           sudo apt install aria2 binutils make python3 libssl-dev build-essential bc  bison flex unzip libssl-dev ca-certificates xz-utils mkbootimg cpio device-tree-compiler git git-lfs -y
           curl -LSs "https://raw.githubusercontent.com/rifsxd/KernelSU-Next/next/kernel/setup.sh" | bash -s next
+          hit config --global user.email "ng.ct_ml@tuta.io"
+          git config --global user.name "reocat"
           curl -fsSL https://gitlab.com/simonpunk/susfs4ksu/-/raw/gki-android13-5.10/kernel_patches/50_add_susfs_in_gki-android13-5.10.patch?ref_type=heads | git am -
           aria2c -j$(nproc --all) $(curl -fsSL https://github.com/ZyCromerZ/Clang/raw/main/Clang-main-link.txt)
           mkdir zyc-clang
